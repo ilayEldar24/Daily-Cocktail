@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Daily Cocktail</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #f2f2f2, #6f8dea);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: rgb(156, 156, 255);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h2 {
+            color: #333;
+            margin-top: 0;
+        }
+
+        h3 {
+            color: #666;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        p {
+            color: #555;
+        }
+
+        img {
+            max-width: 40%;
+            height: auto;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Daily Cocktail</h1>
+    </header>
+    <main>
+        <h2 id="cocktailName"> Our daily coctail: <%= drink.strDrink %> </h2>
+        <h3>Category:  <%= drink.strCategory %></h3>
+        <h3>Ingredients:
+            <ul>
+                <% for(let i = 1; i <= 15; i++) { %>
+                    <% const ingredient = drink['strIngredient' + i]; %>
+                    <% if(ingredient) { %>
+                        <li><%= ingredient %></li>
+                    <% } %>
+                <% } %>
+            </ul>
+        </h3>
+        <p id="instructionsP"> Coctail Recepie: <%= drink.strInstructions %> </p>
+        <img id="cocktailImage" src="<%= drink.strDrinkThumb %> " alt="Cocktail Image">
+    </main>
+</body>
+</html>
