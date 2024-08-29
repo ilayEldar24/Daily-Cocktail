@@ -58,8 +58,20 @@
             max-width: 40%;
             height: auto;
             margin-top: 20px;
+            margin-left: 15px;
         }
-    </style>
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin:5px;
+        }
+        p{
+            font-size: 18px;
+        }
+        </style>
 </head>
 <body>
     <header>
@@ -68,18 +80,22 @@
     <main>
         <h2 id="cocktailName"> Our daily coctail: <%= drink.strDrink %> </h2>
         <h3>Category:  <%= drink.strCategory %></h3>
-        <h3>Ingredients:
-            <ul>
-                <% for(let i = 1; i <= 15; i++) { %>
-                    <% const ingredient = drink['strIngredient' + i]; %>
-                    <% if(ingredient) { %>
-                        <li><%= ingredient %></li>
+        
+        <div class="container">
+            <h3>Ingredients:
+                <ul>
+                    <% for(let i = 1; i <= 15; i++) { %>
+                        <% const ingredient = drink['strIngredient' + i]; %>
+                        <% if(ingredient) { %>
+                            <li><%= ingredient %></li>
+                        <% } %>
                     <% } %>
-                <% } %>
-            </ul>
-        </h3>
+                </ul>
+            </h3>
+            <img id="cocktailImage" src="<%= drink.strDrinkThumb %> " alt="Cocktail Image">
+            
+        </div>
         <p id="instructionsP"> Coctail Recepie: <%= drink.strInstructions %> </p>
-        <img id="cocktailImage" src="<%= drink.strDrinkThumb %> " alt="Cocktail Image">
     </main>
 </body>
 </html>
