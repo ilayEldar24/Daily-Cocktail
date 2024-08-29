@@ -1,5 +1,8 @@
 # Daily Cocktail App
 
+
+![Alt text](./photos/Gin-Tonic.png/)
+
 Welcome to the Daily Cocktail App! This application displays a randomly selected cocktail each day, fetched from the Cocktail DB API. It's built using Express.js for the server, EJS for templating, and Axios for API requests.
 
 ## Introduction
